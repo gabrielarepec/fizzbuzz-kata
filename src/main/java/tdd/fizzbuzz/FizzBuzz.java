@@ -2,7 +2,8 @@ package tdd.fizzbuzz;
 
 public class FizzBuzz {
 
-	public int play(final int i) {
-		return i;
+	public String play(final int i) {
+		if(i%3==0) return "Fizz";
+		return String.valueOf(i);
 	}
 }
