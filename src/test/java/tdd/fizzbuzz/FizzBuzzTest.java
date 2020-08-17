@@ -6,17 +6,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FizzBuzzTest {
 
+    public static final FizzBuzz FIZZ_BUZZ = new FizzBuzz();
+
     @Test
     public void play_shouldReturnNumber_whenNumberIsNotDivisibleBy3or5() {
-        FizzBuzz fizzBuzz=new FizzBuzz();
-        assertThat(fizzBuzz.play(1)).isEqualTo("1");
-        assertThat(fizzBuzz.play(7)).isEqualTo("7");
+        assertFizzBuzz(1, "1");
+        assertFizzBuzz(7, "7");
     }
 
     @Test
     public void play_shouldReturnFizz_whenNumberIsDivisibleBy3() {
-        FizzBuzz fizzBuzz=new FizzBuzz();
-        assertThat(fizzBuzz.play(3)).isEqualTo("Fizz");
-        assertThat(fizzBuzz.play(6)).isEqualTo("Fizz");
+        assertFizzBuzz(3, "Fizz");
+        assertFizzBuzz(6, "Fizz");
+    }
+
+    private void assertFizzBuzz(final int i, final String s) {
+        assertThat(FIZZ_BUZZ.play(i)).isEqualTo(s);
     }
 }
