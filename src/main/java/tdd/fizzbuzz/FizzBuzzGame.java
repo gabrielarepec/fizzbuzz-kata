@@ -9,6 +9,9 @@ public class FizzBuzzGame {
 	FizzBuzz fizzBuzz=new FizzBuzz();
 
 	public String play(final int max) {
+		if(max<=0){
+			return "";
+		}
 		return IntStream.rangeClosed(1,max)
 				.mapToObj(number-> fizzBuzz.play(number))
 				.collect(Collectors.joining(","));

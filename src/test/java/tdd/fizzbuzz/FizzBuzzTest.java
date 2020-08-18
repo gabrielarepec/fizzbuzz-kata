@@ -14,7 +14,7 @@ public class FizzBuzzTest {
     @Test
     public void play_shouldReturnNumber_whenNumberIsNotDivisibleBy3or5() {
         assertFizzBuzz(1, "1");
-        assertFizzBuzz(7, "7");
+        assertFizzBuzz(4, "4");
     }
 
     @Test
@@ -49,8 +49,8 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void play_shouldReturnFizzBuzz_whenNumberContains3AndIsDivisibleBy5() {
-        assertFizzBuzz(35,"FizzBuzz");
+    public void play_shouldReturnFizzBuzz_whenNumberContains3AndIsDivisibleBy5And7() {
+        assertFizzBuzz(35,"FizzBuzzBar");
     }
 
     @Test
@@ -71,6 +71,16 @@ public class FizzBuzzTest {
     @Test
     public void play_shouldReturnFizzBuzz_whenNumberIsDivisibleBy5And3AndDoesNotContain5and3() {
         assertFizzBuzz(60,"FizzBuzz");
+    }
+
+    @Test
+    public void play_shouldReturnBar_whenNumberIsDivisibleBy7() {
+        assertFizzBuzz(7,"Bar");
+    }
+
+    @Test
+    public void play_shouldReturnBar_whenNumberContains7() {
+        assertFizzBuzz(71,"Bar");
     }
 
     private void assertFizzBuzzException(final int number) {

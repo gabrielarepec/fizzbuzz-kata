@@ -13,4 +13,10 @@ class FizzBuzzGameTest {
 		assertThat(fizzBuzzGame.play(3)).isEqualTo("1,2,Fizz");
 	}
 
+	@Test
+	public void testFizzBuzzGame_shouldReturnEmptyString_whenPlay0(){
+		FizzBuzzGame fizzBuzzGame=new FizzBuzzGame();
+		assertThat(fizzBuzzGame.play(0)).isEqualTo("");
+	}
+
 }

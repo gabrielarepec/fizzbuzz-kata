@@ -1,22 +1,39 @@
 package tdd.fizzbuzz;
 
+import javax.print.attribute.standard.Severity;
+
+
 public class FizzBuzz {
 
 	private static final int FIVE = 5;
 	private static final int THREE = 3;
+	public static final int SEVEN = 7;
 
 	public String play(final int number) {
 		if(number<=0) throw  new FizzBuzzException(String.format("Number: %d is wrong.",number));
 		final StringBuilder result=new StringBuilder();
-		if(isDividableBy3(number) || numberContains3(number)) result.append("Fizz");
-		if(isDividableBy5(number) || numberContains5(number)) result.append("Buzz");
+		if(isDividableBy3(number) || numberContainsThree(number))
+			result.append("Fizz");
+		if(isDividableBy5(number) || numberContainsFive(number))
+			result.append("Buzz");
+		if(isDividableBy7(number) || numberContainsSeven(number))
+			result.append("Bar");
 		return result.toString().isEmpty()? String.valueOf(number) :result.toString();
 	}
-	private boolean numberContains3(final int number) {
+
+	private boolean numberContainsSeven(final int number) {
+		return numberContainsDigit(number,String.valueOf(SEVEN));
+	}
+
+	private boolean isDividableBy7(final int number) {
+		return isDividableBy(number, SEVEN);
+	}
+
+	private boolean numberContainsThree(final int number) {
 		return numberContainsDigit(number,String.valueOf(THREE));
 	}
 
-	private boolean numberContains5(final int number) {
+	private boolean numberContainsFive(final int number) {
 		return numberContainsDigit(number,String.valueOf(FIVE));
 	}
 	private boolean numberContainsDigit(final int number, final String s) {
