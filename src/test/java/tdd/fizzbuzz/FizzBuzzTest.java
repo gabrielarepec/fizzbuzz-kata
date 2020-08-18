@@ -38,6 +38,40 @@ public class FizzBuzzTest {
         assertFizzBuzzException(0);
         assertFizzBuzzException(-1);
     }
+    @Test
+    public void play_shouldReturnFizz_whenNumberContains3() {
+        assertFizzBuzz(31,"Fizz");
+    }
+
+    @Test
+    public void play_shouldReturnBuzz_whenNumberContains5() {
+        assertFizzBuzz(52,"Buzz");
+    }
+
+    @Test
+    public void play_shouldReturnFizzBuzz_whenNumberContains3AndIsDivisibleBy5() {
+        assertFizzBuzz(35,"FizzBuzz");
+    }
+
+    @Test
+    public void play_shouldReturnFizzBuzz_whenNumberContains5AndIsDivisibleBy3() {
+        assertFizzBuzz(51,"FizzBuzz");
+    }
+
+    @Test
+    public void play_shouldReturnBuzz_whenNumberContains5AndIsDivisibleBy5() {
+        assertFizzBuzz(50,"Buzz");
+    }
+
+    @Test
+    public void play_shouldReturnFizz_whenNumberContains3AndIsDivisibleBy3() {
+        assertFizzBuzz(33,"Fizz");
+    }
+
+    @Test
+    public void play_shouldReturnFizzBuzz_whenNumberIsDivisibleBy5And3AndDoesNotContain5and3() {
+        assertFizzBuzz(60,"FizzBuzz");
+    }
 
     private void assertFizzBuzzException(final int number) {
         assertThatExceptionOfType(FizzBuzzException.class)
